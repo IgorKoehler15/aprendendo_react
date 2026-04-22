@@ -1,17 +1,9 @@
 {
   "projects": [
-    {
-      "name": "Teste",
-      "budget": "1245.42",
-      "category": {
-        "id": "1",
-        "name": "Infra"
-      },
-      "cost": 0,
-      "services": [],
-      "id": "ehQuvmJEH60"
-    }
+ 
   ],
+
+  
   "categories": [
     {
       "id": "1",
@@ -29,6 +21,5 @@
       "id": "4",
       "name": "Planejamento"
     }
-  ],
-  "$schema": "./node_modules/json-server/schema.json"
+  ]
 }
