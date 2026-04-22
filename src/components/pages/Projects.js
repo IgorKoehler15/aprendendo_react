@@ -10,6 +10,7 @@ import { useState, useEffect, use } from 'react'
 function Projects() {
     const [projects, setProjects] = useState([])
     const [removeLoading, setRemoveLoading] = useState(false)
+    const [projectMessage, setProjectMessage] = useState('')
 
     const location = useLocation()
     let message = ''
@@ -41,9 +42,9 @@ function Projects() {
             },
         })
         .then((resp) => resp.json())
-        .then((data) => {
+        .then(() => {
             setProjects(projects.filter((project) => project.id !== id))
-            //message
+            setProjectMessage('Projeto removido com sucesso!')
         })
         .catch((err) => console.error(err))
     }
@@ -55,6 +56,7 @@ function Projects() {
                 <LinkButton to="/newproject" text="Criar Projeto"/>
             </div>
             {message && <Message type="success" msg={message} />}
+            {projectMessage && <Message type="success" msg={projectMessage} />}
             <Container customClass="start">
                 {projects.length > 0 && projects.map((project) => <ProjectCard 
                         id={project.id}
