@@ -4,10 +4,12 @@ import Container from '../layout/Container'
 import LinkButton from '../layout/LinkButton'
 import styles from './Projects.module.css'
 import ProjectCard from '../project/ProjectCard'
+import Loading from '../layout/Loading'
 import { useState, useEffect, use } from 'react'
 
 function Projects() {
     const [projects, setProjects] = useState([])
+    const [removeLoading, setRemoveLoading] = useState(false)
 
     const location = useLocation()
     let message = ''
@@ -16,18 +18,35 @@ function Projects() {
     }
 
     useEffect(() => {
-        fetch('http://localhost:5000/projects', {
+        setTimeout(() => {
+            fetch('http://localhost:5000/projects', {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
             },
+            })
+            .then((resp) => resp.json())
+            .then((data) => {
+                setProjects(data);
+                setRemoveLoading(true);
+            })
+            .catch((err) => console.error(err));
+        }, 300)
+    }, []);
+
+    function removeProject(id) {
+        fetch(`http://localhost:5000/projects/${id}`, {
+            method: 'DELETE',
+            headers: {'Content-Type': 'application/json'
+            },
         })
         .then((resp) => resp.json())
         .then((data) => {
-            setProjects(data);
+            setProjects(projects.filter((project) => project.id !== id))
+            //message
         })
-        .catch((err) => console.error(err));
-    }, []);
+        .catch((err) => console.error(err))
+    }
 
     return (
         <div className={styles.project_container}>
@@ -43,7 +62,12 @@ function Projects() {
                         budget={project.budget}
                         category={project.category.name}
                         key={project.id}
+                        handleRemove={removeProject}
                     />
+                )}
+                {!removeLoading && <Loading />}
+                {removeLoading && projects.length === 0 && (
+                    <p>Não há projetos cadastrados!</p>
                 )}
             </Container>
         </div>
