@@ -1,46 +1,15 @@
 {
   "projects": [
     {
-      "name": "igor",
-      "budget": "2000",
+      "name": "Teste",
+      "budget": "3000",
       "category": {
         "id": "2",
         "name": "Desenvolvimento"
       },
-      "cost": 2000,
-      "services": [
-        {
-          "name": "programar",
-          "cost": "200",
-          "description": "Em C#",
-          "id": "e33b56ec-6d15-48ce-a114-a1aa55bd99c1"
-        },
-        {
-          "name": "teste",
-          "cost": "300",
-          "description": "Testar as regras de negócio",
-          "id": "bb3e54b9-90a9-4e23-a457-74195b16db60"
-        },
-        {
-          "name": "Melhoria",
-          "cost": "500",
-          "description": "Banco de dados",
-          "id": "aa1f5046-2336-41e2-98ff-63ca0ec7fc00"
-        },
-        {
-          "name": "Melhoria",
-          "cost": "500",
-          "description": "Banco de dados",
-          "id": "aa1f5046-2336-41e2-98ff-63ca0ec7fc00"
-        },
-        {
-          "name": "Melhoria",
-          "cost": "500",
-          "description": "Banco de dados",
-          "id": "aa1f5046-2336-41e2-98ff-63ca0ec7fc00"
-        }
-      ],
-      "id": "kUO9FleiTvM"
+      "cost": 0,
+      "services": [],
+      "id": "TSAgRdCu05w"
     }
   ],
   "categories": [
