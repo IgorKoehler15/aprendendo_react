@@ -1,26 +1,34 @@
 {
   "projects": [
     {
-      "name": "ola",
-      "budget": "435",
+      "name": "Teste 01",
+      "budget": "4000",
       "category": {
-        "id": "3",
-        "name": "Design"
+        "id": "2",
+        "name": "Desenvolvimento"
       },
-      "cost": 0,
-      "services": [],
-      "id": "aVb-KTtfbCU"
-    },
-    {
-      "name": "Atualizado",
-      "budget": "1500",
-      "category": {
-        "id": "1",
-        "name": "Infra"
-      },
-      "cost": 0,
-      "services": [],
-      "id": "gcsVCv8GFKk"
+      "cost": 4000,
+      "services": [
+        {
+          "name": "test",
+          "cost": "200",
+          "description": "ola",
+          "id": "08065cf6-5ac9-41d3-97d8-c4d8da8f54d9"
+        },
+        {
+          "name": "test 02",
+          "cost": "800",
+          "description": "olasd",
+          "id": "c05b0032-2eae-4a43-9dfc-61d941919e46"
+        },
+        {
+          "name": "opa",
+          "cost": "3000",
+          "description": "keldsf",
+          "id": "19254704-c749-47cc-a026-83838d905a2d"
+        }
+      ],
+      "id": "v2VpzMsLpME"
     }
   ],
   "categories": [
